@@ -1,3 +1,4 @@
+import "./Characters.css";
 import { useState, useEffect } from "react";
 import searchAPIs from "../api";
 
@@ -25,14 +26,19 @@ function Characters() {
 
   return (
     <div>
-      <form onSubmit={handleSearchSubmit}>
+      <form onSubmit={handleSearchSubmit} className="search-bar-box">
         <input value={term} onChange={handleChange} />
       </form>
       <ul>
         {characters.map((character) => {
           return (
-            <li>
+            <li className="characters-box">
               <p>{character.name}</p>
+              <img
+                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                alt={character.id}
+                className="characters-image"
+              />
             </li>
           );
         })}

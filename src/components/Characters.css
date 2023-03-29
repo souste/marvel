@@ -1,0 +1,21 @@
+/* Search Bar */
+
+.search-bar-box {
+  border: red solid 2px;
+  background-color: grey;
+  height: 100px;
+}
+
+/* Characters */
+
+.characters-box {
+  border: black solid 2px;
+  display: inline-block;
+  max-width: 500px;
+  align-items: centre;
+}
+
+.characters-image {
+  max-width: 400px;
+  max-height: 300px;
+}
