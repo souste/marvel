@@ -28,7 +28,7 @@ const searchCharacter = async (character_id) => {
     const response = await axios.get(
       `http://gateway.marvel.com/v1/public/characters/${character_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
     );
-    console.log(response.data.data.results);
+    return response.data.data.results;
   } catch (error) {
     console.error(error);
   }

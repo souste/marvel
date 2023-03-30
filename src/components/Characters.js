@@ -1,6 +1,7 @@
 import "./Characters.css";
 import { useState, useEffect } from "react";
 import searchAPIs from "../api";
+import { Link } from "react-router-dom";
 
 function Characters() {
   const [term, setTerm] = useState("");
@@ -32,14 +33,19 @@ function Characters() {
       <ul>
         {characters.map((character) => {
           return (
-            <li className="characters-box">
-              <p>{character.name}</p>
-              <img
-                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                alt={character.id}
-                className="characters-image"
-              />
-            </li>
+            <Link
+              to={{ pathname: `characters/${character.id}` }}
+              key={character.id}
+            >
+              <li className="characters-box">
+                <p>{character.name}</p>
+                <img
+                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                  alt={character.id}
+                  className="characters-image"
+                />
+              </li>
+            </Link>
           );
         })}
       </ul>
