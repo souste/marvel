@@ -1,0 +1,11 @@
+.comics-box {
+  border: black solid 2px;
+  display: inline-block;
+  max-width: 500px;
+  align-items: centre;
+}
+
+.comics-image {
+  max-width: 400px;
+  max-height: 300px;
+}

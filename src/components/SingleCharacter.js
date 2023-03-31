@@ -1,4 +1,5 @@
 import "./SingleCharacter.css";
+import Comics from "./Comics";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import searchAPIs from "../api";
@@ -24,7 +25,12 @@ function SingleCharacter() {
             alt={character.id}
           />
         )}
-        {<p>{character.description}</p>}
+        {character.description ? (
+          <p>{character.description}</p>
+        ) : (
+          <p>No Description provided for this character</p>
+        )}
+        <Comics />
       </li>
     </div>
   );
