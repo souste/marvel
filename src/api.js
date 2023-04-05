@@ -50,10 +50,27 @@ const searchComicsByCharacterId = async (character_id) => {
   }
 };
 
+const searchComicsByComicID = async (comic_id) => {
+  const publicKey = "fda0ea1f82b4a660addf30cff2441d84";
+  const privateKey = process.env.REACT_APP_MARVEL_PRIVATE_KEY;
+  const timestamp = new Date().getTime();
+  const hash = md5(`${timestamp}${privateKey}${publicKey}`);
+
+  try {
+    const response = await axios.get(
+      `http://gateway.marvel.com/v1/public/comics/${comic_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    );
+    return response.data.data.results;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 const searchAPIs = {
   searchCharacters,
   searchCharacter,
   searchComicsByCharacterId,
+  searchComicsByComicID,
 };
 
 export default searchAPIs;

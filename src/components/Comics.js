@@ -2,6 +2,7 @@ import "./Comics.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import searchAPIs from "../api";
+import { Link } from "react-router-dom";
 
 function Comics() {
   const { character_id } = useParams();
@@ -20,14 +21,21 @@ function Comics() {
       <ul>
         {comics.map((comic) => {
           return (
-            <li className="comics-box">
-              <p>{comic.title}</p>
-              <img
-                src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                alt={comic.id}
-                className="comics-image"
-              />
-            </li>
+            <Link
+              to={{
+                pathname: `/characters/${character_id}/comics/${comic.id}`,
+              }}
+              key={comic.id}
+            >
+              <li className="comics-box">
+                <p>{comic.title}</p>
+                <img
+                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  alt={comic.id}
+                  className="comics-image"
+                />
+              </li>
+            </Link>
           );
         })}
       </ul>
