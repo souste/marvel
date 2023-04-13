@@ -3,6 +3,9 @@ import Comics from "./Comics";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import searchAPIs from "../api";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function SingleCharacter() {
   const { character_id } = useParams();
@@ -17,21 +20,30 @@ function SingleCharacter() {
 
   return (
     <div>
+      <Link to={`/`}>
+        <FontAwesomeIcon icon={faTimes} className="character-back-button" />
+      </Link>
       <li className="single-character-box">
-        <h1>{character.name}</h1>
         {character.thumbnail && (
           <img
             src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
             alt={character.id}
+            className="character-image"
           />
         )}
-        {character.description ? (
-          <p>{character.description}</p>
-        ) : (
-          <p>No Description provided for this character</p>
-        )}
-        <Comics />
+        <div>
+          <h1 className="character-name">{character.name}</h1>
+          {character.description ? (
+            <p className="character-description">{character.description}</p>
+          ) : (
+            <p className="character-no-description">
+              No Description provided for this character
+            </p>
+          )}
+        </div>
       </li>
+      <h2 className="comics-title">{character.name} Comics</h2>
+      <Comics />
     </div>
   );
 }

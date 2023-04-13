@@ -15,29 +15,52 @@ function Comics() {
     });
   }, [character_id]);
 
-  return (
+  const maxChars = 50;
+
+  const truncateTitle = (title, comic) => {
+    if (title.length > maxChars) {
+      return (
+        <div>
+          {title.substring(0, maxChars)}...
+          <Link to={`/characters/${character_id}/comics/${comic.id}`}></Link>
+        </div>
+      );
+    }
+    return title;
+  };
+
+  return comics.length === 0 ? (
+    <p className="no-comics">No Comics for this character</p>
+  ) : (
     <div>
-      <h2>Comics</h2>
       <ul>
-        {comics.map((comic) => {
-          return (
-            <Link
-              to={{
-                pathname: `/characters/${character_id}/comics/${comic.id}`,
-              }}
-              key={comic.id}
-            >
-              <li className="comics-box">
-                <p>{comic.title}</p>
-                <img
-                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                  alt={comic.id}
-                  className="comics-image"
-                />
+        {comics
+          .filter(
+            (comic) =>
+              comic.thumbnail &&
+              !comic.thumbnail.path.includes("image_not_available")
+          )
+          .map((comic) => {
+            return (
+              <li key={comic.id} className="comics-box">
+                <Link
+                  to={{
+                    pathname: `/characters/${character_id}/comics/${comic.id}`,
+                  }}
+                  key={comic.id}
+                >
+                  <p className="comic-title">
+                    {truncateTitle(comic.title, comic)}
+                  </p>
+                  <img
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                    alt={comic.id}
+                    className="comics-image"
+                  />
+                </Link>
               </li>
-            </Link>
-          );
-        })}
+            );
+          })}
       </ul>
     </div>
   );

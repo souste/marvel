@@ -1,3 +1,50 @@
 .single-character-box {
   list-style-type: none;
 }
+
+.single-character-box {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.character-back-button {
+  color: black;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 50px;
+}
+
+.character-name {
+  color: red;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  margin-left: 30px;
+  font-size: 50px;
+}
+
+.character-image {
+  height: 500px;
+  margin: 20px;
+}
+
+.character-description {
+  font-size: 25px;
+  padding: 10px;
+  margin-left: 20px;
+  text-align: justify;
+}
+
+.character-no-description {
+  font-size: 25px;
+  padding: 10px;
+  margin-left: 20px;
+  text-align: justify;
+}
+
+.comics-title {
+  color: red;
+  text-align: center;
+}

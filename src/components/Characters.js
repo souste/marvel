@@ -2,6 +2,7 @@ import "./Characters.css";
 import { useState, useEffect } from "react";
 import searchAPIs from "../api";
 import { Link } from "react-router-dom";
+import logo from "./marvel-comics-logo.png";
 
 function Characters() {
   const [term, setTerm] = useState("");
@@ -27,27 +28,40 @@ function Characters() {
 
   return (
     <div>
-      <form onSubmit={handleSearchSubmit} className="search-bar-box">
-        <input value={term} onChange={handleChange} />
-      </form>
-      <ul>
-        {characters.map((character) => {
-          return (
-            <Link
-              to={{ pathname: `characters/${character.id}` }}
-              key={character.id}
-            >
-              <li className="characters-box">
-                <p>{character.name}</p>
-                <img
-                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                  alt={character.id}
-                  className="characters-image"
-                />
-              </li>
-            </Link>
-          );
-        })}
+      <div className="search-bar-box">
+        <img src={logo} alt="marvel-comics-logo" className="logo" />
+        <form onSubmit={handleSearchSubmit} className="search-bar">
+          <input
+            value={term}
+            onChange={handleChange}
+            placeholder="  Search for any Character"
+          />
+        </form>
+      </div>
+      <ul className="characters-container">
+        {characters
+          .filter(
+            (character) =>
+              character.thumbnail &&
+              !character.thumbnail.path.includes("image_not_available")
+          )
+          .map((character) => {
+            return (
+              <Link
+                to={{ pathname: `characters/${character.id}` }}
+                key={character.id}
+              >
+                <li className="characters-box">
+                  <p className="characters-title">{character.name}</p>
+                  <img
+                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    alt={character.id}
+                    className="characters-image"
+                  />
+                </li>
+              </Link>
+            );
+          })}
       </ul>
     </div>
   );

@@ -1,8 +1,30 @@
+.no-comics {
+  font-size: 25px;
+  padding: 10px;
+  margin-left: 20px;
+  text-align: center;
+}
+
 .comics-box {
-  border: black solid 2px;
+  /* border: black solid 2px; */
+
   display: inline-block;
-  max-width: 500px;
-  align-items: centre;
+  width: 210px;
+  height: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+}
+
+.comic-title {
+  max-width: 250px;
+  height: 30px;
+  color: black;
+  text-align: center;
 }
 
 .comics-image {

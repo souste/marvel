@@ -1,3 +1,16 @@
 .single-comic-box {
   list-style-type: none;
+  display: flex;
+}
+
+.single-comic-information {
+  margin-left: 40px;
+}
+
+.single-comic-title {
+  color: red;
+}
+
+.single-comic-description {
+  font-size: 25px;
 }
