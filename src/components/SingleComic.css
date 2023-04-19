@@ -1,6 +1,11 @@
+.single-comic-all p {
+  color: white;
+}
+
 .single-comic-box {
   list-style-type: none;
   display: flex;
+  background-color: black;
 }
 
 .single-comic-information {
@@ -13,4 +18,13 @@
 
 .single-comic-description {
   font-size: 25px;
+  color: white;
+}
+
+.information-title {
+  color: yellow;
+}
+
+.creators-title {
+  color: yellow;
 }

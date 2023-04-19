@@ -3,6 +3,7 @@
 }
 
 .single-character-box {
+  background-color: black;
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -10,11 +11,11 @@
 }
 
 .character-back-button {
-  color: black;
+  color: red;
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 50px;
+  top: 20px;
+  right: 20px;
+  font-size: 70px;
 }
 
 .character-name {
@@ -31,6 +32,7 @@
 }
 
 .character-description {
+  color: white;
   font-size: 25px;
   padding: 10px;
   margin-left: 20px;
@@ -42,9 +44,15 @@
   padding: 10px;
   margin-left: 20px;
   text-align: justify;
+  color: white;
 }
 
 .comics-title {
-  color: red;
+  color: yellow;
   text-align: center;
+  background-color: black;
+}
+
+.divider-color {
+  background-color: black;
 }

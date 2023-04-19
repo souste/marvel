@@ -33,7 +33,7 @@ function Comics() {
     <p className="no-comics">No Comics for this character</p>
   ) : (
     <div>
-      <ul>
+      <ul className="comics-box">
         {comics
           .filter(
             (comic) =>
@@ -42,7 +42,7 @@ function Comics() {
           )
           .map((comic) => {
             return (
-              <li key={comic.id} className="comics-box">
+              <li key={comic.id} className="comics-list-box">
                 <Link
                   to={{
                     pathname: `/characters/${character_id}/comics/${comic.id}`,
