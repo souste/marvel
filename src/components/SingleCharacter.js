@@ -20,7 +20,7 @@ function SingleCharacter() {
 
   return (
     <div className="divider-color">
-      <Link to={{ pathname: `characters/${character.id}` }}>
+      <Link to={{ pathname: `/` }}>
         <FontAwesomeIcon icon={faTimes} className="character-back-button" />
       </Link>
       <li className="single-character-box">

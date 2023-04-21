@@ -8,6 +8,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function SingleComic() {
   const { comic_id } = useParams();
+  const { character_id } = useParams();
   const [singleComic, setSingleComic] = useState({});
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function SingleComic() {
 
   return (
     <div className="single-comic-all">
-      <Link to={`/characters/:character_id`}>
+      <Link to={`/characters/${character_id}`}>
         <FontAwesomeIcon icon={faTimes} className="character-back-button" />
       </Link>
 
@@ -38,6 +39,7 @@ function SingleComic() {
           <img
             src={`${singleComic.thumbnail.path}.${singleComic.thumbnail.extension}`}
             alt={singleComic.id}
+            className="single-comic-image"
           />
         )}
         <div className="single-comic-information">
