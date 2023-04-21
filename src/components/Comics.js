@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 function Comics() {
   const { character_id } = useParams();
   const [comics, setComics] = useState([]);
+  const [term, setTerm] = useState([]);
 
   useEffect(() => {
     searchAPIs.searchComicsByCharacterId(character_id).then((data) => {
       console.log("these are the comics", data);
       setComics(data);
     });
-  }, [character_id]);
+  }, [character_id, term]);
 
   const maxChars = 50;
 
@@ -29,10 +30,21 @@ function Comics() {
     return title;
   };
 
+  const handleChange = (event) => {
+    setTerm(event.target.value);
+  };
+
   return comics.length === 0 ? (
     <p className="no-comics">No Comics for this character</p>
   ) : (
     <div>
+      <form>
+        <input
+          value={term}
+          onChange={handleChange}
+          placeholder="  Search for any comic"
+        />
+      </form>
       <ul className="comics-box">
         {comics
           .filter(

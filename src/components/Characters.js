@@ -17,10 +17,10 @@ function Characters() {
     }
   }, [term]);
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    console.log("I've been typed!!", term);
-  };
+  // const handleSearchSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log("I've been typed!!", term);
+  // };
 
   const handleChange = (event) => {
     setTerm(event.target.value);
@@ -34,7 +34,7 @@ function Characters() {
     <div>
       <div className="search-bar-box">
         <img src={logo} alt="marvel-comics-logo" className="logo" />
-        <form onSubmit={handleSearchSubmit} className="search-bar">
+        <form className="search-bar">
           <input
             value={term}
             onChange={handleChange}
