@@ -26,6 +26,10 @@ function Characters() {
     setTerm(event.target.value);
   };
 
+  const handleClick = (event) => {
+    setTerm(event);
+  };
+
   return (
     <div>
       <div className="search-bar-box">
@@ -36,6 +40,24 @@ function Characters() {
             onChange={handleChange}
             placeholder="  Search for any Character"
           />
+          <div className="search-bar-dropdown">
+            {characters
+              .filter(
+                (item) =>
+                  item.name !== term &&
+                  item.name.startsWith(term) !== term &&
+                  item.thumbnail &&
+                  !item.thumbnail.path.includes("image_not_available")
+              )
+              .map((item) => (
+                <div
+                  onClick={() => handleClick(item.name)}
+                  className="search-bar-dropdown-row"
+                >
+                  {item.name}
+                </div>
+              ))}
+          </div>
         </form>
       </div>
       <ul className="characters-container">

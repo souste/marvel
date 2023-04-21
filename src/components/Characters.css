@@ -19,6 +19,14 @@ input {
   margin-top: calc((200px - 30px) / 2);
 }
 
+.search-bar-dropdown {
+  background-color: white;
+}
+
+.search-bar-dropdown-row {
+  color: black;
+}
+
 /* Characters */
 
 .characters-container {
