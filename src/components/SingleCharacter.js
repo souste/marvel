@@ -31,7 +31,7 @@ function SingleCharacter() {
             className="character-image"
           />
         )}
-        <div>
+        <div className="name-and-description-container">
           <h1 className="character-name">{character.name}</h1>
           {character.description ? (
             <p className="character-description">{character.description}</p>

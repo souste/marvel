@@ -1,50 +1,64 @@
 .single-character-box {
-  list-style-type: none;
-}
-
-.single-character-box {
-  background-color: black;
+  background-color: #1b1d39;
   list-style-type: none;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+.name-and-description-container {
+  border: 2px solid black;
+  background: linear-gradient(45deg, #fcbf1e, #d42027);
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px black;
+  margin: 0 auto;
+}
+
 .character-back-button {
-  color: red;
+  color: #d42027;
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 70px;
+  transition: transform 0.3s ease;
+}
+
+.character-back-button:hover {
+  transform: scale(1.1);
 }
 
 .character-name {
-  color: red;
-  font-family: "Bebas Neue", sans-serif;
+  color: black;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   margin-left: 30px;
   font-size: 50px;
+  text-align: center;
 }
 
 .character-image {
   height: 500px;
   margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px black;
+  transition: filter 0.3s ease;
 }
 
 .character-description {
-  color: white;
+  color: black;
   font-size: 25px;
   padding: 10px;
-  margin-left: 20px;
+  margin: 30px;
   text-align: justify;
 }
 
 .character-no-description {
   font-size: 25px;
   padding: 10px;
-  margin-left: 20px;
+  margin: 30px;
   text-align: justify;
-  color: white;
+  color: black;
 }
 
 .comics-title {

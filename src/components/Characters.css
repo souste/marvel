@@ -41,17 +41,17 @@ input {
 
 /* Welcome Instructions */
 
-body {
+/* body {
   background-color: #d42027;
-}
+} */
 
 .instructions-container {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: #fcbf1e;
-  border: 2px solid black;
+  /* background-color: black; */
+  /* border: 2px solid black; */
   margin-left: 350px;
   margin-right: 350px;
   margin-top: 100px;
@@ -65,18 +65,20 @@ body {
   margin-right: 30px;
   text-align: center;
   padding: 70px;
-  background-color: black;
+  background: linear-gradient(45deg, #fcbf1e, #d42027);
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px black;
 }
 
 .no-search-welcome-instructions-title {
-  color: red;
+  color: black;
   font-size: 40px;
 }
 
 .no-search-welcome-instructions-text {
-  color: white;
+  color: black;
   font-size: 20px;
 }
 

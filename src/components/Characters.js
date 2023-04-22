@@ -26,9 +26,10 @@ function Characters() {
     setTerm(event.target.value);
   };
 
-  const handleClick = (event) => {
-    setTerm(event);
-  };
+  // const handleClick = (item) => {
+  //   setTerm(item.name);
+  //   setCharacters([item]);
+  // };
 
   return (
     <div>
@@ -40,7 +41,7 @@ function Characters() {
             onChange={handleChange}
             placeholder="  Search for any Character"
           />
-          <div className="search-bar-dropdown">
+          {/* <div className="search-bar-dropdown">
             {characters
               .filter(
                 (item) =>
@@ -51,13 +52,13 @@ function Characters() {
               )
               .map((item) => (
                 <div
-                  onClick={() => handleClick(item.name)}
+                  onClick={() => handleClick(item)}
                   className="search-bar-dropdown-row"
                 >
                   {item.name}
                 </div>
               ))}
-          </div>
+          </div> */}
         </form>
       </div>
       {term ? (
