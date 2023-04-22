@@ -60,31 +60,52 @@ function Characters() {
           </div>
         </form>
       </div>
-      <ul className="characters-container">
-        {characters
-          .filter(
-            (character) =>
-              character.thumbnail &&
-              !character.thumbnail.path.includes("image_not_available")
-          )
-          .map((character) => {
-            return (
-              <Link
-                to={{ pathname: `characters/${character.id}` }}
-                key={character.id}
-              >
-                <li className="characters-box">
-                  <p className="characters-title">{character.name}</p>
-                  <img
-                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                    alt={character.id}
-                    className="characters-image"
-                  />
-                </li>
-              </Link>
-            );
-          })}
-      </ul>
+      {term ? (
+        <ul className="characters-container">
+          {characters
+            .filter(
+              (character) =>
+                character.thumbnail &&
+                !character.thumbnail.path.includes("image_not_available")
+            )
+            .map((character) => {
+              return (
+                <Link
+                  to={{ pathname: `characters/${character.id}` }}
+                  key={character.id}
+                >
+                  <li className="characters-box">
+                    <p className="characters-title">{character.name}</p>
+                    <img
+                      src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                      alt={character.id}
+                      className="characters-image"
+                    />
+                  </li>
+                </Link>
+              );
+            })}
+        </ul>
+      ) : (
+        <div className="instructions-container">
+          <div className="no-search-welcome-instructions">
+            <h1 className="no-search-welcome-instructions-title">
+              Welcome to The Marvel Comics Database.
+            </h1>
+            <p className="no-search-welcome-instructions-text">
+              1. Search for your favourite Characters
+            </p>
+            <p className="no-search-welcome-instructions-text">
+              2. Click on any Character for more detailed information and a list
+              of that Character's comics.
+            </p>
+            <p className="no-search-welcome-instructions-text">
+              3. Search for any Character Comic and click on the Comic for more
+              detailed information.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
