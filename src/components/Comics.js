@@ -8,7 +8,7 @@ function Comics() {
   const { character_id } = useParams();
   const [comics, setComics] = useState([]);
   const [term, setTerm] = useState("");
-  // const [offset, setOffset] = useState(50);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     if (!term) {
@@ -17,10 +17,12 @@ function Comics() {
         setComics(data);
       });
     } else {
-      searchAPIs.searchComicsByCharacterId(character_id, term).then((data) => {
-        console.log("these are the comics", data);
-        setComics(data);
-      });
+      searchAPIs
+        .searchComicsByCharacterId(character_id, 100, term)
+        .then((data) => {
+          console.log("these are the comics", data);
+          setComics(data);
+        });
     }
   }, [character_id, term]);
 
@@ -42,11 +44,13 @@ function Comics() {
     const newTerm = event.target.value;
     console.log(newTerm);
     setTerm(newTerm);
+    setDropdownVisible(true);
   };
 
   const handleClick = (event, item) => {
     event.preventDefault();
     setComics([item]);
+    setDropdownVisible(false);
   };
 
   // const handleLoadMore = () => {
@@ -71,21 +75,20 @@ function Comics() {
           defaultValue={term}
           onChange={handleChange}
           placeholder="  Search for any comic involving this character"
+          className="comics-search-bar"
         />
         {/* <button onClick={handleLoadMore}>Next</button> */}
-        {term !== "" && (
-          <div className="comics-drop">
+        {term !== "" && dropdownVisible && (
+          <div className="comics-dropdown">
             {comics &&
-              comics
-                .filter((item) => item.title !== term)
-                .map((item) => (
-                  <div
-                    onClick={(event) => handleClick(event, item)}
-                    className="comics-search-dropdown"
-                  >
-                    {item.title}
-                  </div>
-                ))}
+              comics.map((item) => (
+                <div
+                  className="comics-dropdown-row"
+                  onClick={(event) => handleClick(event, item)}
+                >
+                  {item.title}
+                </div>
+              ))}
           </div>
         )}
       </form>
@@ -100,13 +103,14 @@ function Comics() {
             )
             .map((comic) => {
               return (
-                <li key={comic.id} className="comics-list-box">
-                  <Link
-                    to={{
-                      pathname: `/characters/${character_id}/comics/${comic.id}`,
-                    }}
-                    key={comic.id}
-                  >
+                <Link
+                  to={{
+                    pathname: `/characters/${character_id}/comics/${comic.id}`,
+                  }}
+                  key={comic.id}
+                  className="comics-link"
+                >
+                  <li key={comic.id} className="comics-list-box">
                     <p className="comic-title">
                       {truncateTitle(comic.title, comic)}
                     </p>
@@ -115,8 +119,8 @@ function Comics() {
                       alt={comic.id}
                       className="comics-image"
                     />
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               );
             })}
       </ul>

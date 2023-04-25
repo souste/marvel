@@ -13,7 +13,7 @@
   height: 200px;
 }
 
-input {
+.characters-search-bar {
   width: 400px;
   height: 30px;
   border-radius: 0.875rem;
@@ -26,7 +26,9 @@ input {
   width: 400px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1; /* (this makes the list appear on top of the everything else) */
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 200px;
 }
 
 .search-bar-dropdown-row {
@@ -114,10 +116,9 @@ input {
   /* font-size: 1rem; this is good if I can use truncation */
 }
 
-a {
+.characters-link {
   border: 2px solid #000;
   text-decoration: none;
-  color: red;
   font-weight: bold;
   background-color: #fcbf1e;
   padding: 0.5rem 1rem;

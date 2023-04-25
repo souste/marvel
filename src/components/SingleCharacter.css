@@ -7,7 +7,7 @@
 }
 
 .name-and-description-container {
-  border: 2px solid black;
+  border: 2px solid green;
   background: linear-gradient(45deg, #fcbf1e, #d42027);
   border-radius: 10px;
   box-shadow: 0 0 0 2px black;
@@ -16,7 +16,7 @@
 }
 
 .character-back-button {
-  color: #d42027;
+  color: white;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -40,7 +40,7 @@
 .character-image {
   height: 500px;
   margin: 20px;
-  border: 2px solid black;
+  border: 2px solid green;
   border-radius: 10px;
   box-shadow: 0 0 0 2px black;
   transition: filter 0.3s ease;
@@ -69,5 +69,5 @@
 }
 
 .divider-color {
-  background-color: black;
+  background-color: #1b1d39;
 }

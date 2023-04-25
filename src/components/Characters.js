@@ -7,6 +7,7 @@ import logo from "./marvel-comics-logo.png";
 function Characters() {
   const [term, setTerm] = useState("");
   const [characters, setCharacters] = useState([]);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     if (term) {
@@ -17,19 +18,21 @@ function Characters() {
     }
   }, [term]);
 
-  // const handleSearchSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log("I've been typed!!", term);
-  // };
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    console.log("I've been typed!!", term);
+  };
 
   const handleChange = (event) => {
     setTerm(event.target.value);
+    setDropdownVisible(true);
   };
 
-  // const handleClick = (item) => {
-  //   setTerm(item.name);
-  //   setCharacters([item]);
-  // };
+  const handleClick = (item) => {
+    setTerm(item.name);
+    setCharacters([item]);
+    setDropdownVisible(false);
+  };
 
   return (
     <div>
@@ -37,29 +40,30 @@ function Characters() {
         <img src={logo} alt="marvel-comics-logo" className="logo" />
         <form className="search-bar">
           <input
-            // onSubmit={handleSearchSubmit}
+            onSubmit={handleSearchSubmit}
             value={term}
             onChange={handleChange}
             placeholder="  Search for any Character"
+            className="characters-search-bar"
           />
-          {/* <div className="search-bar-dropdown">
-            {characters
-              .filter(
-                (item) =>
-                  item.name !== term &&
-                  item.name.startsWith(term) !== term &&
-                  item.thumbnail &&
-                  !item.thumbnail.path.includes("image_not_available")
-              )
-              .map((item) => (
-                <div
-                  onClick={() => handleClick(item)}
-                  className="search-bar-dropdown-row"
-                >
-                  {item.name}
-                </div>
-              ))}
-          </div> */}
+          {dropdownVisible && (
+            <div className="search-bar-dropdown">
+              {characters
+                .filter(
+                  (item) =>
+                    item.thumbnail &&
+                    !item.thumbnail.path.includes("image_not_available")
+                )
+                .map((item) => (
+                  <div
+                    onClick={() => handleClick(item)}
+                    className="search-bar-dropdown-row"
+                  >
+                    {item.name}
+                  </div>
+                ))}
+            </div>
+          )}
         </form>
       </div>
       {term ? (
@@ -75,6 +79,7 @@ function Characters() {
                 <Link
                   to={{ pathname: `characters/${character.id}` }}
                   key={character.id}
+                  className="characters-link"
                 >
                   <li className="characters-box">
                     <p className="characters-title">{character.name}</p>

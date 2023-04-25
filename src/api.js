@@ -36,7 +36,7 @@ const searchCharacter = async (character_id) => {
 
 const searchComicsByCharacterId = async (
   character_id,
-  // limit = 50,
+  limit = 100,
   // offset = 0,
   term = ""
 ) => {
@@ -46,7 +46,7 @@ const searchComicsByCharacterId = async (
   const hash = md5(`${timestamp}${privateKey}${publicKey}`);
 
   try {
-    let url = `http://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+    let url = `http://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`;
     if (term) {
       url += `&titleStartsWith=${term}`;
     }
