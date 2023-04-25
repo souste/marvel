@@ -6,8 +6,16 @@
   color: white;
 }
 
+.comics-searchbar-box {
+  background-color: black;
+}
+
 .comics-box {
   background-color: black;
+}
+
+.comics-search-dropdown {
+  color: white;
 }
 
 .comics-list-box {

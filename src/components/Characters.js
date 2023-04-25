@@ -37,6 +37,7 @@ function Characters() {
         <img src={logo} alt="marvel-comics-logo" className="logo" />
         <form className="search-bar">
           <input
+            // onSubmit={handleSearchSubmit}
             value={term}
             onChange={handleChange}
             placeholder="  Search for any Character"

@@ -11,7 +11,8 @@
   background: linear-gradient(45deg, #fcbf1e, #d42027);
   border-radius: 10px;
   box-shadow: 0 0 0 2px black;
-  margin: 0 auto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .character-back-button {

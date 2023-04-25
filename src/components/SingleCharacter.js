@@ -42,7 +42,7 @@ function SingleCharacter() {
           )}
         </div>
       </li>
-      <h2 className="comics-title">Comics</h2>
+      {/* <h2 className="comics-title">Comics</h2> */}
       <Comics />
     </div>
   );
