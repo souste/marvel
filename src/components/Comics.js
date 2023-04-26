@@ -53,6 +53,21 @@ function Comics() {
     setDropdownVisible(false);
   };
 
+  useEffect(() => {
+    const handleOutsideDropdownClick = (event) => {
+      const dropdown = document.querySelector(".comics-dropdown");
+      if (dropdown && !dropdown.contains(event.target)) {
+        setDropdownVisible(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideDropdownClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideDropdownClick);
+    };
+  });
+
   // const handleLoadMore = () => {
   //   searchAPIs
   //     .searchComicsByCharacterId(character_id, 50, offset + 50)

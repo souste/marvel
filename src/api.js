@@ -36,7 +36,7 @@ const searchCharacter = async (character_id) => {
 
 const searchComicsByCharacterId = async (
   character_id,
-  limit = 100,
+  limit = 28,
   // offset = 0,
   term = ""
 ) => {

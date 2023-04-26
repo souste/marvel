@@ -34,7 +34,19 @@ function Characters() {
     setDropdownVisible(false);
   };
 
-  // need to do a click outside of dropdown bar
+  useEffect(() => {
+    const handleOutsideDropdownClick = (event) => {
+      const dropdown = document.querySelector(".search-bar-dropdown");
+      if (dropdown && !dropdown.contains(event.target)) {
+        setDropdownVisible(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideDropdownClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideDropdownClick);
+    };
+  });
 
   return (
     <div>
