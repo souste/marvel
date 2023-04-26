@@ -9,7 +9,7 @@ const searchCharacters = async (term) => {
 
   try {
     const response = await axios.get(
-      `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${term}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${term}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
     );
 
     return response.data.data.results;
@@ -26,7 +26,7 @@ const searchCharacter = async (character_id) => {
 
   try {
     const response = await axios.get(
-      `http://gateway.marvel.com/v1/public/characters/${character_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/characters/${character_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
     );
     return response.data.data.results;
   } catch (error) {
@@ -46,7 +46,7 @@ const searchComicsByCharacterId = async (
   const hash = md5(`${timestamp}${privateKey}${publicKey}`);
 
   try {
-    let url = `http://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`;
+    let url = `https://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`;
     if (term) {
       url += `&titleStartsWith=${term}`;
     }
@@ -57,7 +57,7 @@ const searchComicsByCharacterId = async (
   }
 };
 
-// http://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${offset}&titleStartsWith=${term}
+// https://gateway.marvel.com/v1/public/characters/${character_id}/comics?&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}&offset=${offset}&titleStartsWith=${term}
 
 const searchComicsByComicID = async (comic_id) => {
   const publicKey = "fda0ea1f82b4a660addf30cff2441d84";
@@ -67,7 +67,7 @@ const searchComicsByComicID = async (comic_id) => {
 
   try {
     const response = await axios.get(
-      `http://gateway.marvel.com/v1/public/comics/${comic_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/comics/${comic_id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
     );
     return response.data.data.results;
   } catch (error) {
