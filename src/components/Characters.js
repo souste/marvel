@@ -34,6 +34,8 @@ function Characters() {
     setDropdownVisible(false);
   };
 
+  // need to do a click outside of dropdown bar
+
   return (
     <div>
       <div className="search-bar-box">
