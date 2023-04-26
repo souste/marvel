@@ -1,22 +1,23 @@
 .single-character-box {
-  background-color: #1b1d39;
-  list-style-type: none;
+  background-color: #000;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 50px;
 }
 
 .name-and-description-container {
-  border: 2px solid green;
+  border: 2px solid #d42027;
   background: linear-gradient(45deg, #fcbf1e, #d42027);
   border-radius: 10px;
   box-shadow: 0 0 0 2px black;
   margin-left: 50px;
   margin-right: 50px;
+  padding: 20px;
 }
 
 .character-back-button {
-  color: white;
+  color: #fff;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -29,29 +30,36 @@
 }
 
 .character-name {
-  color: black;
+  color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  margin-left: 30px;
-  font-size: 50px;
+  font-size: 70px;
   text-align: center;
+  text-shadow: 0 0 10px #d42027;
+  margin-bottom: 50px;
 }
 
 .character-image {
   height: 500px;
   margin: 20px;
-  border: 2px solid green;
+  border: 2px solid #d42027;
   border-radius: 10px;
-  box-shadow: 0 0 0 2px black;
+  box-shadow: 0 0 10px #d42027;
   transition: filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.character-image:hover {
+  filter: none;
 }
 
 .character-description {
-  color: black;
+  color: #fff;
   font-size: 25px;
   padding: 10px;
   margin: 30px;
   text-align: justify;
+  text-shadow: 0 0 10px #d42027;
 }
 
 .character-no-description {
@@ -59,15 +67,18 @@
   padding: 10px;
   margin: 30px;
   text-align: justify;
-  color: black;
+  color: #fff;
 }
 
 .comics-title {
-  color: yellow;
+  color: #fff;
+  font-size: 50px;
   text-align: center;
-  background-color: black;
+  text-shadow: 0 0 10px #d42027;
+  padding: 50px;
+  background-color: #1b1d39;
 }
 
 .divider-color {
-  background-color: #1b1d39;
+  background-color: #000;
 }

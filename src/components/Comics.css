@@ -8,7 +8,7 @@
 
 .comics-searchbar-box {
   position: relative;
-  background-color: #1b1d39;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,10 +17,13 @@
 .comics-search-bar {
   width: 500px;
   height: 30px;
-  border-radius: 0.875rem;
-  border: #ffd700 solid 2px;
-  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+  background-color: #fff;
   color: #212121;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 .comics-link {
@@ -34,7 +37,7 @@
 }
 
 .comics-box {
-  background-color: #1b1d39;
+  background-color: #000;
   position: relative;
 }
 
@@ -71,8 +74,8 @@
   margin-top: 20px;
   box-sizing: border-box;
   text-align: center;
-  border: green solid 2px;
-  background-color: black;
+  border: 2px solid #d42027;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -81,11 +84,14 @@
 }
 
 .comic-title {
-  max-width: 250px;
-  height: 30px;
+  max-width: 200px;
+  height: 60px;
   color: black;
   text-align: center;
-  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px auto 0;
 }
 
 .comics-image {

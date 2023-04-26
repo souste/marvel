@@ -25,28 +25,28 @@ function Characters() {
 
   const handleChange = (event) => {
     setTerm(event.target.value);
-    setDropdownVisible(true);
+    // setDropdownVisible(true);
   };
 
-  const handleClick = (item) => {
-    setTerm(item.name);
-    setCharacters([item]);
-    setDropdownVisible(false);
-  };
+  // const handleClick = (item) => {
+  //   setTerm(item.name);
+  //   setCharacters([item]);
+  //   setDropdownVisible(false);
+  // };
 
-  useEffect(() => {
-    const handleOutsideDropdownClick = (event) => {
-      const dropdown = document.querySelector(".search-bar-dropdown");
-      if (dropdown && !dropdown.contains(event.target)) {
-        setDropdownVisible(false);
-      }
-    };
-    document.addEventListener("click", handleOutsideDropdownClick);
+  // useEffect(() => {
+  //   const handleOutsideDropdownClick = (event) => {
+  //     const dropdown = document.querySelector(".search-bar-dropdown");
+  //     if (dropdown && !dropdown.contains(event.target)) {
+  //       setDropdownVisible(false);
+  //     }
+  //   };
+  //   document.addEventListener("click", handleOutsideDropdownClick);
 
-    return () => {
-      document.removeEventListener("click", handleOutsideDropdownClick);
-    };
-  });
+  //   return () => {
+  //     document.removeEventListener("click", handleOutsideDropdownClick);
+  //   };
+  // });
 
   return (
     <div>
@@ -70,7 +70,7 @@ function Characters() {
                 )
                 .map((item) => (
                   <div
-                    onClick={() => handleClick(item)}
+                    // onClick={() => handleClick(item)}
                     className="search-bar-dropdown-row"
                   >
                     {item.name}
