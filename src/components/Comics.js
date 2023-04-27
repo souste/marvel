@@ -83,7 +83,9 @@ function Comics() {
   //   <p className="no-comics">No Comics for this character</p>
   // ) :
 
-  return (
+  return comics.length === 0 ? (
+    <p className="no-comics">No Comics for this character</p>
+  ) : (
     <div>
       <form className="comics-searchbar-box">
         <input

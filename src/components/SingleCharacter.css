@@ -82,3 +82,44 @@
 .divider-color {
   background-color: #000;
 }
+
+/* Mobile Friendly */
+
+@media only screen and (max-width: 600px) {
+  .single-character-box {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .name-and-description-container {
+    margin: 0;
+  }
+
+  .character-back-button {
+    font-size: 40px;
+  }
+
+  .character-name {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .character-image {
+    height: 300px;
+    margin: 10px;
+    filter: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .character-description,
+  .character-no-description {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .comics-title {
+    font-size: 30px;
+    padding: 20px;
+  }
+}

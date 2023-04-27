@@ -98,3 +98,11 @@
   max-width: 400px;
   max-height: 300px;
 }
+
+/* Mobile Friendly */
+
+@media (max-width: 600px) {
+  .comics-search-bar::placeholder {
+    font-size: 14px;
+  }
+}

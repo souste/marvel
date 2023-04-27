@@ -114,15 +114,15 @@ function Characters() {
               Welcome to The Marvel Comics Database.
             </h1>
             <p className="no-search-welcome-instructions-text">
-              1. Search for your favourite Characters
+              1. Search for any Marvel Character.
             </p>
             <p className="no-search-welcome-instructions-text">
-              2. Click on any Character for more detailed information and a list
-              of that Character's comics.
+              2. Click on that Character for more detailed information and a
+              list of that Character's comics.
             </p>
             <p className="no-search-welcome-instructions-text">
-              3. Search for any Character Comic and click on the Comic for more
-              detailed information.
+              3. Search for any Comic involving that Character and click on that
+              Comic for more detailed information.
             </p>
           </div>
         </div>

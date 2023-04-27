@@ -34,7 +34,7 @@ function SingleComic() {
         <FontAwesomeIcon icon={faTimes} className="character-back-button" />
       </Link>
 
-      <li className="single-comic-box">
+      <li className="single-comic-box" key={singleComic.id}>
         {singleComic.thumbnail && (
           <img
             src={`${singleComic.thumbnail.path}.${singleComic.thumbnail.extension}`}
@@ -84,9 +84,3 @@ function SingleComic() {
 }
 
 export default SingleComic;
-
-// This error message typically occurs when you are trying to access the property 'length' of an undefined value. This means that the variable or object you are trying to access is not defined or null.
-
-// In your case, it seems like you are trying to access the length property of an undefined value in the Comics component, on line 63 of the file main.a12aaf0545995316bb04.hot-update.js. To fix this error, you need to identify which variable or object is undefined and make sure that it is properly initialized or defined before you try to access its properties.
-
-// You can start by checking the variables and objects used in your Comics component and tracing back to where they are defined or initialized. Once you have identified the issue, you can then take steps to ensure that the variable or object is properly defined before you attempt to access its properties.

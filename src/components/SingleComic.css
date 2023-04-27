@@ -1,5 +1,8 @@
 .single-comic-all p {
   color: white;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .single-comic-box {
@@ -12,6 +15,14 @@
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 200px;
+  border: 2px solid #d42027;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d42027;
+  filter: grayscale(100%);
+}
+
+.single-comic-image:hover {
+  filter: none;
 }
 
 .single-comic-information {
@@ -19,7 +30,10 @@
 }
 
 .single-comic-title {
-  color: red;
+  color: #d42027;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 70px;
 }
 
 .single-comic-description {
@@ -29,8 +43,50 @@
 
 .information-title {
   color: yellow;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .creators-title {
   color: yellow;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Mobile Friendly */
+
+@media only screen and (max-width: 600px) {
+  .single-comic-box {
+    flex-direction: column;
+    padding: 27px;
+  }
+
+  .single-comic-image {
+    filter: none;
+    margin-bottom: 20px;
+  }
+
+  .single-comic-title {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+
+  .single-comic-description {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .information-title,
+  .creators-title {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .single-comic-all p {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
 }
