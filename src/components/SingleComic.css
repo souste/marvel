@@ -66,6 +66,7 @@
   .single-comic-image {
     filter: none;
     margin-bottom: 20px;
+    margin-left: 0;
   }
 
   .single-comic-title {
@@ -88,5 +89,9 @@
     font-size: 16px;
     line-height: 1.2;
     margin-bottom: 20px;
+  }
+
+  .single-comic-information {
+    margin-left: 0;
   }
 }
