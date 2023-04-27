@@ -7,7 +7,7 @@ import logo from "./marvel-comics-logo.png";
 function Characters() {
   const [term, setTerm] = useState("");
   const [characters, setCharacters] = useState([]);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  // const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     if (term) {
