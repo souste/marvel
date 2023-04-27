@@ -75,7 +75,7 @@
   box-sizing: border-box;
   text-align: center;
   border: 2px solid #d42027;
-  background-color: white;
+  background-color: #fff9db;
   border-radius: 10px;
 }
 
@@ -92,6 +92,8 @@
   font-size: 22px;
   font-weight: bold;
   margin: 20px auto 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .comics-image {

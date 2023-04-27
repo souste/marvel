@@ -16,6 +16,12 @@
   padding: 20px;
 }
 
+.name-and-description-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-width: 4px;
+}
+
 .character-back-button {
   color: #fff;
   position: absolute;
@@ -50,7 +56,7 @@
 }
 
 .character-image:hover {
-  filter: none;
+  filter: grayscale(0%);
 }
 
 .character-description {
