@@ -60,7 +60,7 @@ function Characters() {
             placeholder="  Search for any Character"
             className="characters-search-bar"
           />
-          {dropdownVisible && (
+          {/* {dropdownVisible && (
             <div className="search-bar-dropdown">
               {characters
                 .filter(
@@ -77,7 +77,7 @@ function Characters() {
                   </div>
                 ))}
             </div>
-          )}
+          )} */}
         </form>
       </div>
       {term ? (
